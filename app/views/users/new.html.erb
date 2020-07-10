@@ -2,13 +2,13 @@
 
 <form accept-charset="UTF-8" action="/users" method="post">
   <label for="username">Username</label>
-  <input type="text" name="username" id="username" placeholder="Enter your desired username" required>
+  <input type="text" name="user[username]" id="username" placeholder="Enter your desired username" required>
 
   <label for="email">Email Address</label>
-  <input type="email" name="email" id="email" placeholder="Enter your best Email" required>
+  <input type="email" name="user[email]" id="email" placeholder="Enter your best Email" required>
 
   <label for="password">Password</label>
-  <input type="password" name="password" id="password" required>
+  <input type="password" name="user[password]" id="password" required>
 
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 

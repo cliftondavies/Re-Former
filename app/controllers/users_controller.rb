@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+    render :edit unless @user.save
   end
 
   private

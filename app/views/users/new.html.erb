@@ -29,17 +29,24 @@
 <% end %>-->
 
 <%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
   <div>
     <%= f.label :username, "Username:" %><br>
     <%= f.text_field :username, value: "John Doe" %>
-  </div>
+  </div><hr>
   <div>
     <%= f.label :email %><br>
     <%= f.email_field :email, placeholder: "name@example.com" %>
-  </div>
+  </div><hr>
   <div>
     <%= f.label :password %><br>
     <%= f.password_field :password %>
-  </div>
+  </div><hr>
   <%= f.submit "Sign Up" %>
 <% end %>
